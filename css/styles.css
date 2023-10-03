@@ -55,11 +55,29 @@ header {
         #menu ul li a {
             text-decoration: none;
             color: #060606;
-            transition: color 0.3s;   
+            transition: color 0.3s;  
           }  
         #menu ul li a:hover {
          color: hsl(0, 0%, 100%); /* Cambia el color al pasar el ratón por encima */
         }
+        ul { /* o el selector específico para tu lista */
+         /* display: flex;*/
+          flex-direction: column; /* Alinea los elementos verticalmente */
+          justify-content: center; /* Centra los elementos verticalmente */
+          align-items: center; /* Centra los elementos horizontalmente */
+          padding: 1; /* Remueve el padding predeterminado de la lista */
+          list-style-type: none; /* Remueve los bullets de la lista */
+          margin-left: auto; /* Añade márgenes automáticos para centrar en horizontal */
+          margin-right: auto;
+          max-width: 800px; /* Define un ancho máximo para limitar el centro en pantallas muy anchas */
+        }
+
+        @media (max-width: 600px) {
+          .list {
+            font-size: 15px; /* Reduce el tamaño de fuente para pantallas pequeñas */
+          }
+        }
+
           .first-letter {
             color: white;
           }    
