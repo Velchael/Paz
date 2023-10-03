@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Urbanist', sans-serif;
+  background-color: #bdc3c3;
+} 
+input {
+  width: 100%;
+  flex: 1;
+  padding: 15px;
+  border: 3px solid #DDD;
+  border-radius: 5px;
+  outline: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+button[type="submit"] {
+  background-color: #0099FF;
+  height: 30px;
+  width: 30px;
+  border: none;
+  border-radius: 5px;
+  color: #FFF;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  cursor: pointer;
+}
+/********** css login usuario **********************************/
+.form-container {
+    width: 260px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px solid #ffffff;
+  }
+  .title{
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .form-container h4 {
+    text-align: center;
+  }
+  .form-container label,
+  .form-container input {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .form-container button {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  .bold {
+    font-weight: bold;
+    font-size: 16px;
+  }

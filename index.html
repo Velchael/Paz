@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Casa de paz</title>
+</head>
+<body>
+<!-- Botón para mostrar el popup -->
+<div id="popupModal" class="modal">
+    <div class="modal-content">
+        <h2>Este es un popup</h2>
+        <p>¡Haz clic en el botón para ir a la página de inicio de sesión o Registrase!</p>
+        <button id="loginButton">Faça Login ou Registrarse</button>
+        <button id="closeButton">Cerrar</button>
+    </div>
+</div>
+    <div>
+        <header class="headerdos"> 
+          <div class="carrusel">
+            <div class="carrusel-items">
+              <div class="carrusel-item">  
+                  <img src="img/icon-1.jpeg" alt="" >
+              </div>
+              <div class="carrusel-item">
+                <img src="img/icon-2.jpeg" alt="" />
+              </div>
+              <div class="carrusel-item">
+                <img src="img/icon-3.jpeg" alt="" />
+              </div> 
+              <div class="carrusel-item">
+                <img src="img/icon-5.jpeg" alt="" />
+              </div>
+              <div class="carrusel-item">
+                <img src="img/icon-1.jpeg" alt="" />
+              </div>
+              <div class="carrusel-item">
+                <img src="img/icon-2.jpeg" alt="" />
+              </div>
+              <div class="carrusel-item">
+                <img src="img/icon-3.jpeg" alt="" />
+              </div>
+              <div class="carrusel-item">
+                <img src="img/icon-5.jpeg" alt="" />
+              </div>
+            </div>
+          </div>
+          <h1 class="botonavegador2">Casa de paz</h1>
+        </header>
+        <div id="side-menu" class="hidden">
+          <div class="close-button" onclick="closeMenu()">&times;</div>
+          <a href="#" onclick="goHome(); closeMenu();">Inicio</a>
+          <a href="https://wa.me/5511981868794">WhatsApp</a>
+          <a href="https://web.facebook.com/profile.php?id=100004807065957">Facebook</a>
+          <a href="https://youtube.com/channel/UCA6X6RulyTFCU32odRUqIXA">You Tube</a>
+          <a href="inicio-sesion.html">Registro</a>
+          <a href="#">Comunidade... </a>     
+          </div>
+        <!-- Botón para abrir el menú lateral -->
+        <div id="open-menu-button" onclick="openMenu()">&#9776;</div>
+        <main>
+            <article id="fidelidade" class="section1">            
+                <p class="botonavegador">
+                  Sangue de la Fidelidade
+                </p> 
+              <div>
+                <img class="carrusel-itemdos" src="img/fidelidad.jpg" alt="" />
+              </div>
+              <div class="foto2desender">
+                <img class="carrusel-itemdos" src="img/FidelidadPost.png" alt="" />            
+              </div>
+              <p class="declare">Porque Jesus derramou seu sangue através do suor, estou livre de todas as maldições do engano.</p>                
+            </article>
+            <article id="redencao"class="section2">
+              <p class="botonavegador">
+                Sangue da Redeção
+              </p>
+               <div>
+                <img class="carrusel-itemdos"src="img/redencion.jpeg" alt="" />
+               </div>   
+               <div class="foto2desender">
+                <img class="carrusel-itemdos" src="img/redençaopost.png" alt="" />     
+              </div>
+              <p class="declare">Pelo sangue derramado nas chagas do corpo ferido de Jesus tenho direito à cura e a ficar livre da dor</p>
+            </article>
+            <article id="conquista"class="section1">
+              <p class="botonavegador">
+                Sangue da Conquista
+              </p>
+              <div > 
+                <img class="carrusel-itemdos"src="img/coronasola.jpg" alt="" />
+              </div>
+              <div class="foto2desender">
+                <img class="carrusel-itemdos" src="img/conquista1Post.png" alt="" />     
+              </div>
+              <p class="declare">Por quanto você derramou seu sangue Senhor Jesus Cristo pela coroa de espinhos bendita é a terra por sua causa</p>
+            </article>
+            <article id="identidad"class="section2">
+              <p class="botonavegador">
+                Sangue da Identidade
+              </p>
+              <div>
+                <img class="carrusel-itemdos"src="img/labarba3.jpg" alt="" />
+              </div>
+              <div class="foto2desender">
+                <img class="carrusel-itemdos" src="img/identidadPost.png" alt="" />     
+              </div>
+              <p class="declare">Por quanto o sangue do Senhor Jesus Cristo foi derramado de seu rosto, posso restaurar minha imagem</p>
+            </article>
+            <article id="productividad"class="section1">
+              <p class="botonavegador">
+                Sangue da Productividad
+              </p>
+              <div>
+                <img class="carrusel-itemdos"src="img/clavos.jpeg" alt="" />
+              </div>
+              <div class="foto2desender">
+                <img class="carrusel-itemdos" src="img/productividadPost.png" alt="" />     
+              </div>
+              <p class="declare">Por causa do sangue derramado por Jesus através de suas mãos, toda improdutividade em minha vida é cancelada</p>
+            </article>
+            <article id="proposito"class="section2">
+              <p class="botonavegador">
+                Sangue do Proposito
+              </p>  
+              <div>
+                <img class="carrusel-itemdos"src="img/pies.jpg" alt="" />
+              </div>   
+              <div class="foto2desender">
+                <img class="carrusel-itemdos" src="img/propositoPost.png" alt="" />     
+              </div>
+              <p class="declare">Por causa do sangue derramado por Jesus através de seus pés, posso recuperar minha direção</p>
+            </article>
+            <article id="consagracao"class="section1">
+              <p class="botonavegador">
+                Sangue da Consagração
+              </p>  
+              <div>
+                <img class="carrusel-itemdos"src="img/lanza1.jpg" alt="" />
+              </div>
+              <div class="foto2desender">
+                <img class="carrusel-itemdos" src="img/consagraçãoPost.png" alt="" />     
+              </div>
+              <p class="declare">Por causa do sangue derramado por Jesus em seu lado, toda dor em meu coração é levada por ele</p>
+            </article>
+        </main>
+        <footer>
+            <nav id="menu">
+              <h1 class="botonavegador3">Os sete derramamentos do sangue</h1>
+             <ul style="color:#060606">   
+              <li class="list"><a href ="#fidelidade"><span class="first-letter">F</span>idelidad</a></li>
+              <li class="list"><a href ="#redencao"><span class="first-letter">R</span>edenção</a></li>
+              <li class="list"><a href ="#conquista"><span class="first-letter">C</span>onquista</a></li>
+              <li class="list"><a href ="#identidad"><span class="first-letter">I</span>dentidad</a></li>
+              <li class="list"><a href ="#productividad"><span class="first-letter">P</span>roductividad</a></li>
+              <li class="list"><a href ="#proposito"><span class="first-letter">P</span>roposito</a></li>
+              <li class="list"><a href ="#consagracao"><span class="first-letter">C</span>onsagração</a></li>
+              <li class="list"><a href="#" onclick="goHome(); closeMenu();"><span class="home-symbol">&#8962;</span></a></li>
+             </ul>
+            </nav> 
+        </footer>
+    </div>
+    <script src="./scripts/scripts.js"></script>
+</body>
+</html>
