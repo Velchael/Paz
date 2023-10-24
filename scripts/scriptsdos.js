@@ -7,6 +7,7 @@ const inputName = document.querySelector('.register-name');
 const inputEmail = document.querySelector('.register-email');
 const inputPassword = document.querySelector('.register-password');
 const registrationMessagedos = document.querySelector('#registration-messagedos');
+const usertarefa = document.querySelector('#usertarefa')
 const loginUser = async (event) => {
   registrationMessage.textContent = '';
   registrationMessagedos.textContent = '';
@@ -28,7 +29,17 @@ const loginUser = async (event) => {
       registrationMessage.style.display = 'block';
       setTimeout(function () {
         window.location.href = "./index.html";
-      }, 2000);
+      }, 4000);
+  
+      var tarefauser = inputLoginName.value;
+      var usertarefa = document.getElementById('usertarefa'); // Asegúrate de que haya un elemento con el id "usertarefa" en tu página.
+      if (usertarefa) {
+        usertarefa.innerHTML = 'Seja bem-vindo: <span style="color: black;">' + tarefauser + '</span>';
+        usertarefa.style.color = 'green';
+        usertarefa.style.display = 'block';
+      }
+
+
     } else if (response.status === 404) {
       //console.error('Error al registrar el usuario:', response.status);
       registrationMessage.textContent = 'Usuario não existe. faça de novo.';

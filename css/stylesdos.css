@@ -62,3 +62,8 @@ button[type="submit"] {
     font-weight: bold;
     font-size: 16px;
   }
+  .boldtres {
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+  }
