@@ -3,11 +3,14 @@ const inputLoginName = document.querySelector('.login-name');
 const inputLoginPassword = document.querySelector('.login-password');
 const registrationMessage = document.querySelector('#registration-message');
 const registerForm = document.querySelector('.register-form');
+
 const inputName = document.querySelector('.register-name');
 const inputEmail = document.querySelector('.register-email');
 const inputPassword = document.querySelector('.register-password');
 const registrationMessagedos = document.querySelector('#registration-messagedos');
 const usertarefa = document.querySelector('#usertarefa')
+const confirmForm = document.querySelector('.register-form');
+
 const loginUser = async (event) => {
   registrationMessage.textContent = '';
   registrationMessagedos.textContent = '';
@@ -38,8 +41,6 @@ const loginUser = async (event) => {
         usertarefa.style.color = 'green';
         usertarefa.style.display = 'block';
       }
-
-
     } else if (response.status === 404) {
       //console.error('Error al registrar el usuario:', response.status);
       registrationMessage.textContent = 'Usuario não existe. faça de novo.';
@@ -60,7 +61,6 @@ const loginUser = async (event) => {
       window.location.href = "./index.html";
     }, 2000);
   }
-
 };
 loginform.addEventListener('submit', loginUser)
 // Verificación de existencia de usuario
@@ -114,7 +114,7 @@ const registerUser = async (event) => {
       body: JSON.stringify(user)
     });
     if (response.ok) {
-      registrationMessagedos.textContent = 'El registro se ha realizado con éxito';
+      registrationMessagedos.textContent = 'Um e-mail chegará em sua conta para concluir seu cadastro, confirme.';
       registrationMessagedos.style.color = 'green';
       registrationMessagedos.style.display = 'block';
     } else {
@@ -122,6 +122,9 @@ const registerUser = async (event) => {
       registrationMessagedos.textContent = 'Error: No se pudo registrar';
       registrationMessagedos.style.color = 'red';
       registrationMessagedos.style.display = 'block';
+      setTimeout(function () {
+        window.location.href = "./index.html";
+      }, 3000);
     }
   } catch (error) {
     console.error('Error de conexión:', error); // Agrega un mensaje de error en caso de una excepción
@@ -130,7 +133,7 @@ const registerUser = async (event) => {
     registrationMessagedos.style.display = 'block';
     setTimeout(function () {
       window.location.href = "./index.html";
-    }, 2000);
+    }, 3000);
   }
   inputName.value = '';
   inputEmail.value = '';

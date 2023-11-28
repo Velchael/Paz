@@ -60,10 +60,67 @@ button[type="submit"] {
   }
   .bold {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
   }
   .boldtres {
     font-weight: bold;
     font-size: 22px;
     text-align: center;
   }
+
+
+  /**** registro y confirmacion de usuario
+const registerUser = async (event) => {
+  console.log('Función registerUser iniciada'); // Agrega un mensaje para verificar si la función se inicia
+  registrationMessage.textContent = '';
+  registrationMessagedos.textContent = '';
+  inputLoginName.value = '';
+  inputLoginPassword.value = '';
+  event.preventDefault();
+  // Crear el objeto user con los valores de los inputs
+  const user = { username: inputName.value, email: inputEmail.value, password: inputPassword.value };
+  console.log('Usuario creado:', user); // Agrega un mensaje para verificar si el objeto de usuario se crea correctamente
+  if (await userExists(user.username, user.password)) {
+    console.log('Usuario ya existe'); // Agrega un mensaje para verificar si se detecta que el usuario ya existe
+    registrationMessagedos.textContent = 'Error: El usuario ya ha sido registrado';
+    registrationMessagedos.style.color = 'red';
+    registrationMessagedos.style.display = 'block';
+    inputEmail.value = '';
+    inputPassword.value = '';
+    return;
+  }
+  try {
+    const response = await fetch('http://localhost:3307/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(user)
+    });
+    if (response.ok) {
+      registrationMessagedos.textContent = 'El registro se ha realizado con éxito';
+      registrationMessagedos.style.color = 'green';
+      registrationMessagedos.style.display = 'block';
+    } else {
+      console.error('Error al registrar el usuario:', response.status); // Agrega un mensaje de error en caso de un problema
+      registrationMessagedos.textContent = 'Error: No se pudo registrar';
+      registrationMessagedos.style.color = 'red';
+      registrationMessagedos.style.display = 'block';
+    }
+  } catch (error) {
+    console.error('Error de conexión:', error); // Agrega un mensaje de error en caso de una excepción
+    registrationMessagedos.textContent = 'Error de conexión, inténtalo de nuevo más tarde';
+    registrationMessagedos.style.color = 'red';
+    registrationMessagedos.style.display = 'block';
+    setTimeout(function () {
+      window.location.href = "./index.html";
+    }, 2000);
+  }
+  inputName.value = '';
+  inputEmail.value = '';
+  inputPassword.value = '';
+  inputLoginPassword.value ='';
+}
+registerForm.addEventListener('submit', registerUser);
+
+
+
+  */

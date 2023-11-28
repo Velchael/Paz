@@ -62,10 +62,12 @@ header {
         }
         ul { /* o el selector específico para tu lista */
          /* display: flex;*/
+          margin-top: 5px;
+          margin-bottom: 5px;
           flex-direction: column; /* Alinea los elementos verticalmente */
           justify-content: center; /* Centra los elementos verticalmente */
           align-items: center; /* Centra los elementos horizontalmente */
-          padding: 1; /* Remueve el padding predeterminado de la lista */
+          padding: 1px; /* Remueve el padding predeterminado de la lista */
           list-style-type: none; /* Remueve los bullets de la lista */
           margin-left: auto; /* Añade márgenes automáticos para centrar en horizontal */
           margin-right: auto;
@@ -106,7 +108,7 @@ header {
             justify-content: center;
             align-items: center;
             margin-bottom: 0px;
-            margin-top: 3%;
+            margin-top: 1%;
             padding: 0px; 
           }
           .botonavegador2 {
