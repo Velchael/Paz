@@ -6,15 +6,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <title>Casa da paz</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var storedUserName = localStorage.getItem('userName');
+        var usertarefaElement = document.getElementById('usertarefa');
+        
+        if (storedUserName && usertarefaElement) {
+          usertarefaElement.textContent = '-Bem-vindo: ' + storedUserName;
+        }
+      });
+    </script>
 </head>
 <body>
 <!-- Botón para mostrar el popup -->
 <div id="popupModal" class="modal">
     <div class="modal-content">
-        <h2>Este es un popup</h2>
-        <p>¡Haz clic en el botón para ir a la página de inicio de sesión o Registrase!</p>
-        <button id="loginButton">Faça Login ou Registrarse</button>
-        <button id="closeButton">Cerrar</button>
+        <h2>Este é um pop-up</h2>
+        <p>Clique no botão para ir para a página de login ou registro!</p>
+        <button id="loginButton">Faça Login ou Registro</button>
+        <!--<button id="closeButton">Fechar</button>-->
     </div>
 </div>
     <div>
@@ -47,8 +57,17 @@
               </div>
             </div>
           </div>
+         <!--
           <h1 class="botonavegador2">Casa da Paz</h1>
-        
+          Agrega este botón en algún lugar de tu HTML 
+          <button id="logoutButton">Salir</button>
+         --> 
+         <h1 class="botonavegador2">
+          Casa da Paz
+          <span id="usertarefa"></span> <!-- Aquí se mostrará el nombre del usuario -->
+          <button id="logoutButton">Sair da conta</button>
+        </h1>
+
         </header>
         <div id="side-menu" class="hidden">
           <div class="close-button" onclick="closeMenu()">&times;</div>

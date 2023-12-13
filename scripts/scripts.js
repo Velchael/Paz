@@ -1,19 +1,32 @@
 
-  document.addEventListener("DOMContentLoaded", function () {
+   document.addEventListener("DOMContentLoaded", function () {
+    const userConfirmed = localStorage.getItem('userConfirmed') === 'true';
+    if (!userConfirmed) {
       setTimeout(function () {
     document.getElementById("popupModal").style.display = "block";
      }, 30000);
+    } else {
+       // Si el usuario está confirmado, oculta el popupModal
+       document.getElementById("popupModal").style.display = "none";
+    }
     document.getElementById("loginButton").addEventListener("click", function () {
             // Reemplaza "/inicio-sesion.html" con la URL de tu página de inicio de sesión
             window.location.href = "./inicio-sesion.html";
         });
-
          // Agrega un evento al botón de cierre para cerrar el popupModal
     document.getElementById("closeButton").addEventListener("click", function () {
       var popupModal = document.getElementById("popupModal");
     popupModal.style.display = "none";
   });
     });
+// Agrega esto al código JavaScript
+document.getElementById("logoutButton").addEventListener("click", function () {
+  // Cambia el estado de userConfirmed a false
+  localStorage.setItem('userConfirmed', false);
+  // Muestra el popupModal
+  document.getElementById("popupModal").style.display = "block";
+});
+
 /********Meenu lateral ******************** */
 var sideMenu = document.getElementById('side-menu');
 function openMenu() {

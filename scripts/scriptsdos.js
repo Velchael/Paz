@@ -1,5 +1,6 @@
 const loginform = document.querySelector('.login-form');
 const inputLoginName = document.querySelector('.login-name');
+const inputLogEmail = document.querySelector('.login-email');
 const inputLoginPassword = document.querySelector('.login-password');
 const registrationMessage = document.querySelector('#registration-message');
 const registerForm = document.querySelector('.register-form');
@@ -16,7 +17,7 @@ const loginUser = async (event) => {
   registrationMessagedos.textContent = '';
   inputName.value = '';
   event.preventDefault();
-  const user = { username: inputLoginName.value, password: inputLoginPassword.value };
+  const user = { username: inputLoginName.value, email: inputLogEmail.value, password: inputLoginPassword.value };
   try {
     const response = await fetch('http://localhost:3307/users/login', {
       method: 'POST',
@@ -25,35 +26,44 @@ const loginUser = async (event) => {
       },
       body: JSON.stringify(user) // Convierte el objeto user a JSON y lo envía en el cuerpo
     });
-  
-    if (response.status === 200) {
+    const responseData = await response.json();
+    if (response.ok) {
+     if (responseData.user && responseData.user.length > 0 && responseData.user[0].confirmed === 1) {
       registrationMessage.textContent = 'login com sucesso... pode continuar';
       registrationMessage.style.color = 'green';
       registrationMessage.style.display = 'block';
-      setTimeout(function () {
-        window.location.href = "./index.html";
-      }, 4000);
-  
       var tarefauser = inputLoginName.value;
+
+      // Almacena el estado del usuario en el localStorage
+      localStorage.setItem('userConfirmed', 'true');
+      //localStorage.setItem('userId', responseData.user[0].id);
+      localStorage.setItem('userName', tarefauser); // Guarda el nombre del usuario
       var usertarefa = document.getElementById('usertarefa'); // Asegúrate de que haya un elemento con el id "usertarefa" en tu página.
       if (usertarefa) {
         usertarefa.innerHTML = 'Seja bem-vindo: <span style="color: black;">' + tarefauser + '</span>';
         usertarefa.style.color = 'green';
         usertarefa.style.display = 'block';
       }
+
+      setTimeout(function () {
+        window.location.href = "./index.html";
+      }, 5000);
+      } else {
+        registrationMessage.textContent = 'Confirme seu email para continuar ou registrese com un correo valido';
+        registrationMessage.style.color = 'red';
+        registrationMessage.style.display = 'block';
+      }
     } else if (response.status === 404) {
-      //console.error('Error al registrar el usuario:', response.status);
-      registrationMessage.textContent = 'Usuario não existe. faça de novo.';
+      registrationMessage.textContent = 'Usuario não existe. faça login de novo.';
       registrationMessage.style.color = 'red';
       registrationMessage.style.display = 'block';
     } else {
-      //console.error('Error al registrar el usuario:', response.status);
       registrationMessage.textContent = 'Erro de servidor. tente novamente mais tarde';
       registrationMessage.style.color = 'red';
       registrationMessage.style.display = 'block';
     }
   } catch (error) {
-    //console.error('Error al registrar el usuario:', error);
+    console.error('Error al registrar el usuario:', error);
     registrationMessage.textContent = 'Error de conexão. Tente novamente mais tarde.';
     registrationMessage.style.color = 'red';
     registrationMessage.style.display = 'block';
@@ -61,17 +71,21 @@ const loginUser = async (event) => {
       window.location.href = "./index.html";
     }, 2000);
   }
+  setTimeout(function () {
+    registrationMessage.textContent = '';
+    registrationMessagedos.textContent = '';
+  }, 6000); 
 };
 loginform.addEventListener('submit', loginUser)
 // Verificación de existencia de usuario
-const userExists = async (username, password) => {
+const userExists = async (username, email, password) => {
   try {
     const response = await fetch('http://localhost:3307/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ username, password })
+      body: JSON.stringify({ username, email, password })
     });
     if (response.status === 200) {
       const user = await response.json();
@@ -89,22 +103,33 @@ const userExists = async (username, password) => {
 };
 // Registro de nuevo usuario
 const registerUser = async (event) => {
-  console.log('Función registerUser iniciada'); // Agrega un mensaje para verificar si la función se inicia
+  event.preventDefault();
+  //console.log('Función registerUser iniciada'); // Agrega un mensaje para verificar si la función se inicia
   registrationMessage.textContent = '';
   registrationMessagedos.textContent = '';
   inputLoginName.value = '';
   inputLoginPassword.value = '';
+  inputLogEmail.value = '';
   event.preventDefault();
   // Crear el objeto user con los valores de los inputs
-  const user = { username: inputName.value, email: inputEmail.value, password: inputPassword.value };
-  console.log('Usuario creado:', user); // Agrega un mensaje para verificar si el objeto de usuario se crea correctamente
-  if (await userExists(user.username, user.password)) {
-    console.log('Usuario ya existe'); // Agrega un mensaje para verificar si se detecta que el usuario ya existe
+  const user = { 
+    username: inputName.value, 
+    email: inputEmail.value, 
+    password: inputPassword.value
+   };
+  //console.log('Usuario creado:', user); // Agrega un mensaje para verificar si el objeto de usuario se crea correctamente
+  if (await userExists(user.username, user.email, user.password)) {
+    //console.log('Usuario ya existe'); // Agrega un mensaje para verificar si se detecta que el usuario ya existe
     registrationMessagedos.textContent = 'Error: El usuario ya ha sido registrado';
     registrationMessagedos.style.color = 'red';
     registrationMessagedos.style.display = 'block';
     inputEmail.value = '';
     inputPassword.value = '';
+    setTimeout(function () {
+      registrationMessage.textContent = '';
+      registrationMessagedos.textContent = '';
+      // Aquí colocas el código que se ejecutará después del tiempo especificado
+    }, 4000);
     return;
   }
   try {
@@ -114,26 +139,29 @@ const registerUser = async (event) => {
       body: JSON.stringify(user)
     });
     if (response.ok) {
-      registrationMessagedos.textContent = 'Um e-mail chegará em sua conta para concluir seu cadastro, confirme.';
+      registrationMessagedos.textContent = 'Um e-mail chegará em sua conta de correio para concluir seu cadastro, confirme...';
       registrationMessagedos.style.color = 'green';
       registrationMessagedos.style.display = 'block';
+     // setTimeout(function () {
+       // window.location.href = "./index.html";
+      //}, 4000);
     } else {
       console.error('Error al registrar el usuario:', response.status); // Agrega un mensaje de error en caso de un problema
       registrationMessagedos.textContent = 'Error: No se pudo registrar';
       registrationMessagedos.style.color = 'red';
       registrationMessagedos.style.display = 'block';
-      setTimeout(function () {
-        window.location.href = "./index.html";
-      }, 3000);
+      //setTimeout(function () {
+      //  window.location.href = "./index.html";
+      //}, 3000);
     }
   } catch (error) {
     console.error('Error de conexión:', error); // Agrega un mensaje de error en caso de una excepción
     registrationMessagedos.textContent = 'Error de conexión, inténtalo de nuevo más tarde';
     registrationMessagedos.style.color = 'red';
     registrationMessagedos.style.display = 'block';
-    setTimeout(function () {
-      window.location.href = "./index.html";
-    }, 3000);
+   // setTimeout(function () {
+    //  window.location.href = "./index.html";
+    //}, 3000);
   }
   inputName.value = '';
   inputEmail.value = '';

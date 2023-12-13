@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             confirmationMessage.style.display = 'block';
             return;
         }
-        console.log('Token encontrado:', token);
+        //console.log('Token encontrado:', token);
         try {
             const response = await fetch(`http://localhost:3307/users/confirm`, {
                 method: 'POST',
@@ -24,10 +24,11 @@ document.addEventListener('DOMContentLoaded', async function () {
                 const data = await response.json();
                 confirmationMessage.textContent = data.message;
                 confirmationMessage.style.color = 'blue';
+                //setEmailConfirmed(); 
             } else {
                 const errorData = await response.json();
                 console.error(errorData); // Imprime información adicional en la consola
-                confirmationMessage.textContent = errorData.message || 'Error al confirmar el correo......';
+                confirmationMessage.textContent = errorData.message || 'Error al confirmar el correo';
                 confirmationMessage.style.color = 'red';
             }
         } catch (error) {
@@ -38,8 +39,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         } finally {
             // Realiza la redirección después de que se complete la operación
             setTimeout(function () {
-                window.location.href = "./index.html";
-            }, 2000);
+                window.location.href = "./inicio-sesion.html";
+            }, 3000);
         }
         confirmationMessage.style.display = 'block';
   
