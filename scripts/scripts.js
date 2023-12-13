@@ -22,9 +22,17 @@
 // Agrega esto al código JavaScript
 document.getElementById("logoutButton").addEventListener("click", function () {
   // Cambia el estado de userConfirmed a false
+  //usertarefaElement.textContent = '';
   localStorage.setItem('userConfirmed', false);
+// Borra el nombre de usuario del LocalStorage
+  localStorage.removeItem('userName');
+ // Limpia el contenido del span
+  var usertarefaElement = document.getElementById('usertarefa');
+  if (usertarefaElement) {
+    usertarefaElement.textContent = '';
+  }
   // Muestra el popupModal
-  document.getElementById("popupModal").style.display = "block";
+ // document.getElementById("popupModal").style.display = "block";
 });
 
 /********Meenu lateral ******************** */
