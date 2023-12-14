@@ -31,8 +31,8 @@ document.getElementById("logoutButton").addEventListener("click", function () {
   if (usertarefaElement) {
     usertarefaElement.textContent = '';
   }
-  // Muestra el popupModal
- // document.getElementById("popupModal").style.display = "block";
+   //Muestra el popupModal
+ document.getElementById("popupModal").style.display = "block";
 });
 
 /********Meenu lateral ******************** */
