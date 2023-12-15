@@ -67,16 +67,16 @@ const loginUser = async (event) => {
     registrationMessage.textContent = 'Error de conexão. Tente novamente mais tarde.';
     registrationMessage.style.color = 'red';
     registrationMessage.style.display = 'block';
-    setTimeout(function () {
-      window.location.href = "./index.html";
-    }, 2000);
+   // setTimeout(function () {
+    //  window.location.href = "./index.html";
+    //}, 2000);
   }
   setTimeout(function () {
     registrationMessage.textContent = '';
     registrationMessagedos.textContent = '';
   }, 6000); 
 };
-loginform.addEventListener('submit', loginUser)
+loginform.addEventListener('submit', loginUser);
 // Verificación de existencia de usuario
 const userExists = async (username, email, password) => {
   try {
