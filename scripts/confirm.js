@@ -12,12 +12,14 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
         //console.log('Token encontrado:', token);
         try {
-            const response = await fetch(`http://localhost:3307/users/confirm`, {
+            //localhost:3307
+            const response = await fetch(`http://127.0.0.1:3307/users/confirm`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
                 // No es necesario enviar el token en el cuerpo si está en la URL
+                credentials: 'include', 
                 body: JSON.stringify({ token: token })
             });
             if (response.ok) {

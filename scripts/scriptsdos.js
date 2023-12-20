@@ -19,12 +19,13 @@ const loginUser = async (event) => {
   event.preventDefault();
   const user = { username: inputLoginName.value, email: inputLogEmail.value, password: inputLoginPassword.value };
   try {
-    const response = await fetch('http://localhost:3307/users/login', {
+    const response = await fetch('http://127.0.0.1:3307/users/login', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json' // Especifica que el cuerpo de la solicitud es JSON
+        'Content-Type': 'application/json', // Especifica que el cuerpo de la solicitud es JSON
       },
-      body: JSON.stringify(user) // Convierte el objeto user a JSON y lo envía en el cuerpo
+      credentials: 'include', 
+      body: JSON.stringify(user), // Convierte el objeto user a JSON y lo envía en el cuerpo
     });
     const responseData = await response.json();
     if (response.ok) {
@@ -33,7 +34,6 @@ const loginUser = async (event) => {
       registrationMessage.style.color = 'green';
       registrationMessage.style.display = 'block';
       var tarefauser = inputLoginName.value;
-
       // Almacena el estado del usuario en el localStorage
       localStorage.setItem('userConfirmed', 'true');
       //localStorage.setItem('userId', responseData.user[0].id);
@@ -44,7 +44,6 @@ const loginUser = async (event) => {
         usertarefa.style.color = 'green';
         usertarefa.style.display = 'block';
       }
-
       setTimeout(function () {
         window.location.href = "./index.html";
       }, 5000);
@@ -64,7 +63,7 @@ const loginUser = async (event) => {
     }
   } catch (error) {
     console.error('Error al registrar el usuario:', error);
-    registrationMessage.textContent = 'Error de conexão. Tente novamente mais tarde.';
+    registrationMessage.textContent = 'Error de conexão. Tente novamente...';
     registrationMessage.style.color = 'red';
     registrationMessage.style.display = 'block';
    // setTimeout(function () {
@@ -74,17 +73,18 @@ const loginUser = async (event) => {
   setTimeout(function () {
     registrationMessage.textContent = '';
     registrationMessagedos.textContent = '';
-  }, 6000); 
+  }, 7000); 
 };
 loginform.addEventListener('submit', loginUser);
 // Verificación de existencia de usuario
 const userExists = async (username, email, password) => {
   try {
-    const response = await fetch('http://localhost:3307/users/login', {
+    const response = await fetch('http://127.0.0.1:3307/users/login', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
+      credentials: 'include', 
       body: JSON.stringify({ username, email, password })
     });
     if (response.status === 200) {
@@ -95,29 +95,22 @@ const userExists = async (username, email, password) => {
     }
   } catch (error) {
     console.error('Error al verificar el usuario:', error);
-    setTimeout(function () {
-      window.location.href = "./index.html";
-    }, 2000);
+   // setTimeout(function () {
+   //   window.location.href = "./index.html";
+   // }, 2000);
     return false;
   }
 };
 // Registro de nuevo usuario
 const registerUser = async (event) => {
-  event.preventDefault();
-  //console.log('Función registerUser iniciada'); // Agrega un mensaje para verificar si la función se inicia
   registrationMessage.textContent = '';
   registrationMessagedos.textContent = '';
   inputLoginName.value = '';
   inputLoginPassword.value = '';
   inputLogEmail.value = '';
   event.preventDefault();
-  // Crear el objeto user con los valores de los inputs
-  const user = { 
-    username: inputName.value, 
-    email: inputEmail.value, 
-    password: inputPassword.value
-   };
-  //console.log('Usuario creado:', user); // Agrega un mensaje para verificar si el objeto de usuario se crea correctamente
+  const user = { username: inputName.value, email: inputEmail.value, password: inputPassword.value };
+  
   if (await userExists(user.username, user.email, user.password)) {
     //console.log('Usuario ya existe'); // Agrega un mensaje para verificar si se detecta que el usuario ya existe
     registrationMessagedos.textContent = 'Error: El usuario ya ha sido registrado';
@@ -133,18 +126,16 @@ const registerUser = async (event) => {
     return;
   }
   try {
-    const response = await fetch('http://localhost:3307/users', {
+    const response = await fetch('http://127.0.0.1:3307/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include', 
       body: JSON.stringify(user)
     });
     if (response.ok) {
       registrationMessagedos.textContent = 'Um e-mail chegará em sua conta de correio para concluir seu cadastro, confirme...';
       registrationMessagedos.style.color = 'green';
       registrationMessagedos.style.display = 'block';
-     // setTimeout(function () {
-       // window.location.href = "./index.html";
-      //}, 4000);
     } else {
       console.error('Error al registrar el usuario:', response.status); // Agrega un mensaje de error en caso de un problema
       registrationMessagedos.textContent = 'Error: No se pudo registrar';
@@ -155,8 +146,7 @@ const registerUser = async (event) => {
       //}, 3000);
     }
   } catch (error) {
-    console.error('Error de conexión:', error); // Agrega un mensaje de error en caso de una excepción
-    registrationMessagedos.textContent = 'Error de conexión, inténtalo de nuevo más tarde';
+    registrationMessagedos.textContent = 'Error de conexión, inténtalo de nuevo';
     registrationMessagedos.style.color = 'red';
     registrationMessagedos.style.display = 'block';
    // setTimeout(function () {

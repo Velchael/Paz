@@ -1,0 +1,117 @@
+const registerUser = async (event) => {
+  event.preventDefault();
+  //console.log('Función registerUser iniciada'); // Agrega un mensaje para verificar si la función se inicia
+  registrationMessage.textContent = '';
+  registrationMessagedos.textContent = '';
+  inputLoginName.value = '';
+  inputLoginPassword.value = '';
+  inputLogEmail.value = '';
+  event.preventDefault();
+  // Crear el objeto user con los valores de los inputs
+  const user = { 
+    username: inputName.value, 
+    email: inputEmail.value, 
+    password: inputPassword.value
+   };
+  //console.log('Usuario creado:', user); // Agrega un mensaje para verificar si el objeto de usuario se crea correctamente
+  if (await userExists(user.username, user.email, user.password)) {
+    //console.log('Usuario ya existe'); // Agrega un mensaje para verificar si se detecta que el usuario ya existe
+    registrationMessagedos.textContent = 'Error: El usuario ya ha sido registrado';
+    registrationMessagedos.style.color = 'red';
+    registrationMessagedos.style.display = 'block';
+    inputEmail.value = '';
+    inputPassword.value = '';
+    setTimeout(function () {
+      registrationMessage.textContent = '';
+      registrationMessagedos.textContent = '';
+      // Aquí colocas el código que se ejecutará después del tiempo especificado
+    }, 4000);
+    return;
+  }
+  try {
+    const response = await fetch('http://localhost:3307/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include', 
+      body: JSON.stringify(user)
+    });
+
+     // Imprimir el valor de response.ok en la terminal
+     console.error('Error al registrar el usuario............', response.status);
+     setTimeout(function () {
+        window.location.href = "./index.html";
+      }, 5000);
+    if (response.ok) {
+      registrationMessagedos.textContent = 'Um e-mail chegará em sua conta de correio para concluir seu cadastro, confirme...';
+      registrationMessagedos.style.color = 'green';
+      registrationMessagedos.style.display = 'block';
+     // setTimeout(function () {
+       // window.location.href = "./index.html";
+      //}, 4000);
+    } else {
+      console.error('Error al registrar el usuario:', response.status); // Agrega un mensaje de error en caso de un problema
+      registrationMessagedos.textContent = 'Error: No se pudo registrar';
+      registrationMessagedos.style.color = 'red';
+      registrationMessagedos.style.display = 'block';
+      //setTimeout(function () {
+      //  window.location.href = "./index.html";
+      //}, 3000);
+    }
+  } catch (error) {
+    console.error('Error de conexión  ojojojojojo:', error); // Agrega un mensaje de error en caso de una excepción
+    registrationMessagedos.textContent = 'Error de conexión, inténtalo de nuevo más tarde';
+    registrationMessagedos.style.color = 'red';
+    registrationMessagedos.style.display = 'block';
+   // setTimeout(function () {
+    //  window.location.href = "./index.html";
+    //}, 3000);
+  }
+  inputName.value = '';
+  inputEmail.value = '';
+  inputPassword.value = '';
+  inputLoginPassword.value ='';
+}
+registerForm.addEventListener('submit', registerUser);
+/////////////////////
+const registerUser = async (event) => {
+  registrationMessage.textContent = '';
+  registrationMessagedos.textContent = '';
+  inputLoginName.value = '';
+  inputLoginPassword.value = '';
+  inputLogEmail.value = '';
+  event.preventDefault();
+  const user = { username: inputName.value, email: inputEmail.value, password: inputPassword.value };
+  try {
+    const response = await fetch('http://127.0.0.1:3307/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json',
+      //'Origin': 'http://127.0.0.1:5501'
+      },
+      credentials: 'include', 
+      body: JSON.stringify(user)
+    });
+    if (response.ok) {
+      registrationMessagedos.textContent = 'Um e-mail chegará em sua conta de correio para concluir seu cadastro, confirme...';
+      registrationMessagedos.style.color = 'green';
+      registrationMessagedos.style.display = 'block';
+    } else {
+      console.error('Error al registrar el usuario:', response.status); // Agrega un mensaje de error en caso de un problema
+      setTimeout(function () {
+        window.location.href = "./index.html";
+      }, 5000);
+      registrationMessagedos.textContent = 'Error: No se pudo registrar';
+      registrationMessagedos.style.color = 'red';
+      registrationMessagedos.style.display = 'block';
+    }
+  } catch (error) {
+    console.error('Error de conexión  ojojojojojo:', error); // Agrega un mensaje de error en caso de una excepción
+    registrationMessagedos.textContent = 'Error de conexión, inténtalo de nuevo más tarde';
+    registrationMessagedos.style.color = 'red';
+    registrationMessagedos.style.display = 'block';
+  }
+  inputName.value = '';
+  inputEmail.value = '';
+  inputPassword.value = '';
+  inputLoginPassword.value ='';
+}
+registerForm.addEventListener('submit', registerUser);
