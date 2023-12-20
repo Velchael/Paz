@@ -33,7 +33,7 @@ document.getElementById("logoutButton").addEventListener("click", function () {
   }
    //Muestra el popupModal
  document.getElementById("popupModal").style.display = "block";
- window.location.href = "index.html";
+
 });
 
 /********Meenu lateral ******************** */
