@@ -19,7 +19,7 @@ const loginUser = async (event) => {
   event.preventDefault();
   const user = { username: inputLoginName.value, email: inputLogEmail.value, password: inputLoginPassword.value };
   try {
-    const response = await fetch('http://casadepazbak.kinghost.net:21030/users/login', {
+    const response = await fetch('https://intelsiteweb.com:21030/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json', // Especifica que el cuerpo de la solicitud es JSON
@@ -79,7 +79,7 @@ loginform.addEventListener('submit', loginUser);
 // Verificación de existencia de usuario
 const userExists = async (username, email, password) => {
   try {
-    const response = await fetch('https://casadepazbak.kinghost.net:21030/users/login', {
+    const response = await fetch('https://intelsiteweb.com:21030/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -126,7 +126,7 @@ const registerUser = async (event) => {
     return;
   }
   try {
-    const response = await fetch('https://casadepazbak.kinghost.net:21030/users', {
+    const response = await fetch('https://intelsiteweb.com:21030/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include', 
