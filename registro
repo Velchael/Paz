@@ -115,3 +115,27 @@ const registerUser = async (event) => {
   inputLoginPassword.value ='';
 }
 registerForm.addEventListener('submit', registerUser);
+
+////////////////app.js   //////////////
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.options('/users/confirm/:token', (req, res) => {
+   //Configura los encabezados CORS adecuados
+  res.header('Access-Control-Allow-Methods', 'POST');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  // Responde con Ã©xito
+  res.status(200).end();
+});
+
+// Luego, agrega el manejador de la ruta POST
+app.post('/users/confirm/:token', (req, res) => {
+  // Tu lÃ³gica de confirmaciÃ³n de correo electrÃ³nico aquÃ­
+});
+app.use(router);
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Algo deu errado!!!!!!!', details: err.message });
+});
