@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         //console.log('Token encontrado:', token);
         try {
             //localhost:3307
-            const response = await fetch(`http://intelsiteweb.com:21030/users/confirm`, {
+            const response = await fetch(`http://intelsiteweb.com:21030/appnode/users/confirm`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
