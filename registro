@@ -139,3 +139,7 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: 'Algo deu errado!!!!!!!', details: err.message });
 });
+/////////////////////ruta de FTP Node rota original para consulta con el servidor nopde
+const response = await fetch('https://intelsiteweb.com/appnode/users/login'
+/////////////////ruta con localHost vervidor remoto
+http://127.0.0.1:3307/users/login
