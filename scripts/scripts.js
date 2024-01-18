@@ -4,7 +4,7 @@
     if (!userConfirmed) {
       setTimeout(function () {
     document.getElementById("popupModal").style.display = "block";
-     }, 30000);
+     }, 90000);
     } else {
        // Si el usuario está confirmado, oculta el popupModal
        document.getElementById("popupModal").style.display = "none";
