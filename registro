@@ -143,3 +143,6 @@ app.use((err, req, res, next) => {
 const response = await fetch('https://intelsiteweb.com/appnode/users/login'
 /////////////////ruta con localHost vervidor remoto
 http://127.0.0.1:3307/users/login
+
+Correo enviado...: 250 2.0.0 Ok: queued as 4TFn7X3l5hzPgkdK
+Content-Security-Policy: As configurações da página bloquearam o carregamento de um recurso em https://velchael.github.io/favicon.ico (“img-src”).
