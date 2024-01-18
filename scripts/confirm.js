@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', async function () {
             
         } finally {
             // Realiza la redirección después de que se complete la operación
-            setTimeout(function () {
-                window.location.href = "./inicio-sesion.html";
-            }, 3000);
+           // setTimeout(function () {
+            //    window.location.href = "./inicio-sesion.html";
+            //}, 3000);
         }
         confirmationMessage.style.display = 'block';
   
