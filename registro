@@ -153,3 +153,24 @@ Content-Security-Policy: As configurações da página bloquearam o carregamento
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
+
+/////////////////////////////pagina de confirmacion antigua sin css 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://127.0.0.1; img-src 'self' data:;">-->
+    <title>Confirmación de Registro</title>
+</head>
+<body>
+    <h1>Confirmação de e-mail</h1>
+    
+    <p>Obrigado por se registro. Clique no botão abaixo para confirmar seu e-mail</p>
+    <button id="confirmButton">Confirmar e-mail</button>
+    <p id="confirmationMessage" style="display: none;"></p>
+
+    <script src="./scripts/confirm.js"></script>
+    <script src="./scripts/scripts.js"></script>
+</body>
+</html>
+

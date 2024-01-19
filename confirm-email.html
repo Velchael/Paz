@@ -1,16 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://127.0.0.1; img-src 'self' data:;">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmación de Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #confirmationMessage {
+            display: none;
+            color: #4caf50;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            /* Estilos específicos para pantallas pequeñas */
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
     <h1>Confirmação de e-mail</h1>
     
-    <p>Obrigado por se registro. Clique no botão abaixo para confirmar seu e-mail</p>
+    <p>Obrigado por se registrar. Clique no botão abaixo para confirmar seu e-mail.</p>
     <button id="confirmButton">Confirmar e-mail</button>
-    <p id="confirmationMessage" style="display: none;"></p>
+    <p id="confirmationMessage"></p>
 
     <script src="./scripts/confirm.js"></script>
     <script src="./scripts/scripts.js"></script>
