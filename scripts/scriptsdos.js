@@ -40,13 +40,13 @@ const loginUser = async (event) => {
       localStorage.setItem('userName', tarefauser); // Guarda el nombre del usuario
       var usertarefa = document.getElementById('usertarefa'); // Asegúrate de que haya un elemento con el id "usertarefa" en tu página.
       if (usertarefa) {
-        usertarefa.innerHTML = 'Seja bem-vindo: <span style="color: black;">' + tarefauser + '</span>';
+        usertarefa.innerHTML = 'Bem-vindo: <span style="color: black;">' + tarefauser + '</span>';
         usertarefa.style.color = 'green';
         usertarefa.style.display = 'block';
       }
       setTimeout(function () {
         window.location.href = "./index.html";
-      }, 5000);
+      }, 4000);
       } else {
         registrationMessage.textContent = 'Confirme seu email para continuar ou registrese com un correo valido';
         registrationMessage.style.color = 'red';
@@ -73,7 +73,7 @@ const loginUser = async (event) => {
   setTimeout(function () {
     registrationMessage.textContent = '';
     registrationMessagedos.textContent = '';
-  }, 7000); 
+  }, 5000); 
 };
 loginform.addEventListener('submit', loginUser);
 // Verificación de existencia de usuario

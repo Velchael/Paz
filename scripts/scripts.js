@@ -14,10 +14,10 @@
             window.location.href = "./inicio-sesion.html";
         });
          // Agrega un evento al botón de cierre para cerrar el popupModal
-    //document.getElementById("closeButton").addEventListener("click", function () {
-    //  var popupModal = document.getElementById("popupModal");
-    //popupModal.style.display = "none";
-  //});
+    document.getElementById("closeButton").addEventListener("click", function () {
+      var popupModal = document.getElementById("popupModal");
+    popupModal.style.display = "none";
+  });
     });
 // Agrega esto al código JavaScript
 document.getElementById("logoutButton").addEventListener("click", function () {

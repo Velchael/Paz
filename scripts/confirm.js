@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             // Realiza la redirección después de que se complete la operación
             setTimeout(function () {
                window.location.href = "./inicio-sesion.html";
-            }, 6000);
+            }, 4000);
         }
         confirmationMessage.style.display = 'block';
   
