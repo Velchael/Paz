@@ -76,6 +76,44 @@ carrusel.addEventListener("mouseout", () => {
 });
 start();
 
+// Selecciona todos los elementos .carrusel-item
+const carruselItems = document.querySelectorAll('.carrusel-item');
+
+// Recorre cada elemento y agrega eventos de ratón
+carruselItems.forEach(item => {
+  const saibaMaisBtn = item.querySelector('.saiba-mais-btn');
+  
+  // Muestra el botón al pasar el ratón sobre la imagen
+  item.addEventListener('mouseenter', () => {
+    saibaMaisBtn.style.display = 'block';
+  });
+  
+  // Oculta el botón al salir el ratón de la imagen
+  item.addEventListener('mouseleave', () => {
+    saibaMaisBtn.style.display = 'none';
+  });
+});
+// Muestra la pantalla emergente al hacer clic en el botón "Saiba Mais"
+document.addEventListener("DOMContentLoaded", function () {
+  // Obtener elementos
+  const saibaMaisBtns = document.querySelectorAll(".saiba-mais-btn");
+  const popupModal2 = document.getElementById("popupModal2");
+  const closePopupBtn = document.getElementById("closePopupBtn");
+
+  // Agregar evento de clic a cada botón "Saiba Mais"
+  saibaMaisBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      popupModal2.style.display = "block"; // Mostrar pantalla emergente
+    });
+  });
+
+  // Agregar evento de clic al botón "Cerrar"
+  closePopupBtn.addEventListener("click", function () {
+    popupModal2.style.display = "none"; // Ocultar pantalla emergente
+  });
+});
+
+
 ////////////////////////// El navegador
 
 window.addEventListener('DOMContentLoaded', function() {

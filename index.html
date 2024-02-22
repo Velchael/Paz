@@ -11,7 +11,6 @@
       document.addEventListener("DOMContentLoaded", function () {
         var storedUserName = localStorage.getItem('userName');
         var usertarefaElement = document.getElementById('usertarefa');
-        
         if (storedUserName && usertarefaElement) {
           usertarefaElement.textContent = '. Bem-vido ' + storedUserName;
         }
@@ -34,38 +33,43 @@
           <div class="carrusel">
             <div class="carrusel-items">
               <div class="carrusel-item">  
-                <img src="img/banercasa2.png" alt="" />
+                <img src="img/banercasa2.png" alt="" class="carrusel-image"/>
+                <button class="saiba-mais-btn">Saiba Mais</button>
               </div>
               <div class="carrusel-item">
-                <img src="img/banercasa1 (2).png" alt="" />
+                <img src="img/banercasa1 (2).png" alt="" class="carrusel-image"/>
+                <button class="saiba-mais-btn">Saiba Mais</button>
               </div>
               <div class="carrusel-item">
-                <img src="img/banercasa4.png" alt="" />
+                <img src="img/banercasa4.png" alt="" class="carrusel-image"/>
+                <button class="saiba-mais-btn">Saiba Mais</button>
               </div> 
               <div class="carrusel-item">  
-                <img src="img/banercasa2.png" alt="" />
+                <img src="img/banercasa2.png" alt="" class="carrusel-image"/>
+                <button class="saiba-mais-btn">Saiba Mais</button>
               </div>
               <div class="carrusel-item">
-                <img src="img/banercasa1 (2).png" alt="" />
+                <img src="img/banercasa1 (2).png" alt="" class="carrusel-image"/>
+                <button class="saiba-mais-btn">Saiba Mais</button>
               </div>
               <div class="carrusel-item">
-                <img src="img/banercasa4.png" alt="" />
+                <img src="img/banercasa4.png" alt="" class="carrusel-image"/>
+                <button class="saiba-mais-btn">Saiba Mais</button>
               </div> 
             </div>
+          </div> 
+          <div id="popupModal2" class="popup-modal2">
+            <div class="popup-content">
+              <h2>¡Saiba Mais!</h2>
+              <p>Página em construção...</p>
+              <button id="closePopupBtn" class="close-popup-btn">Cerrar</button>
+            </div>
           </div>
-         <!--
-          <h1 class="botonavegador2">Casa da Paz</h1>
-          Agrega este botón en algún lugar de tu HTML 
-          <button id="logoutButton">Salir</button>
-         --> 
-        
         <h1 class="botonavegador2">
           Casa da Paz
           <span id="usertarefa"></span> 
           <button id="logoutButton">Registro</button>
         </h1>
-        
-       
         </header>
         <div id="side-menu" class="hidden">
           <div class="close-button" onclick="closeMenu()">&times;</div>
@@ -178,12 +182,7 @@
               <li class="list"><a href="#" onclick="goHome(); closeMenu();"><span class="home-symbol">&#8962;</span></a></li>
              </ul>
             </nav> 
-         
         </footer>
-
-    <!--<p id="usertarefa"class="bolddos" style="display: none;"></p>
-      <script src="./scripts/scriptsdos.js"></script>
-    -->
     </div>
     <script src="./scripts/scripts.js"></script>
 </body>
