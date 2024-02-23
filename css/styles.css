@@ -305,11 +305,11 @@ header {
       }
       .popup-content {
         position: absolute;
-        top: 40%;
-        left: 40%;
-        transform: translate(-40%, -40%);
+        top: 30%;
+        left: 30%;
+        transform: translate(-30%, -30%);
         background-color: #fff;
-        padding: 20px;
+        padding: 15px;
         border-radius: 10px;
       }
       
@@ -324,7 +324,7 @@ header {
  
       /*********** boton de home  */
     .home-symbol {
-      font-size: 25px; 
+      font-size: 15px; 
       color: white;
   }
   /******ventana popup *********/
