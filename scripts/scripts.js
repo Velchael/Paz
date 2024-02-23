@@ -93,15 +93,15 @@ carruselItems.forEach(item => {
     saibaMaisBtn.style.display = 'none';
   });
 });
-// Muestra la pantalla emergente al hacer clic en el botón "Saiba Mais"
+// Muestra la pantalla emergente al hacer clic en el botón "Saiba Mais1"
 document.addEventListener("DOMContentLoaded", function () {
   // Obtener elementos
-  const saibaMaisBtns = document.querySelectorAll(".saiba-mais-btn");
+  const saibaMaisBtn = document.querySelectorAll(".saiba-mais-btn");
   const popupModal2 = document.getElementById("popupModal2");
   const closePopupBtn = document.getElementById("closePopupBtn");
 
   // Agregar evento de clic a cada botón "Saiba Mais"
-  saibaMaisBtns.forEach(function (btn) {
+  saibaMaisBtn.forEach(function (btn) {
     btn.addEventListener("click", function () {
       popupModal2.style.display = "block"; // Mostrar pantalla emergente
     });
@@ -112,7 +112,45 @@ document.addEventListener("DOMContentLoaded", function () {
     popupModal2.style.display = "none"; // Ocultar pantalla emergente
   });
 });
+// Muestra la pantalla emergente al hacer clic en el botón "Saiba Mais2"
+document.addEventListener("DOMContentLoaded", function () {
+  // Obtener elementos
+  const saibaMaisBtn2 = document.querySelectorAll(".saiba-mais-btn2");
+  const popupModal3 = document.getElementById("popupModal3");
+  const closePopupBtn2 = document.getElementById("closePopupBtn2");
 
+  // Agregar evento de clic a cada botón "Saiba Mais"
+  saibaMaisBtn2.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      popupModal3.style.display = "block"; // Mostrar pantalla emergente
+    });
+  });
+
+  // Agregar evento de clic al botón "Cerrar"
+  closePopupBtn2.addEventListener("click", function () {
+    popupModal3.style.display = "none"; // Ocultar pantalla emergente
+  });
+});
+
+// Muestra la pantalla emergente al hacer clic en el botón "Saiba Mais3"
+document.addEventListener("DOMContentLoaded", function () {
+  // Obtener elementos
+  const saibaMaisBtn3 = document.querySelectorAll(".saiba-mais-btn3");
+  const popupModal4 = document.getElementById("popupModal4");
+  const closePopupBtn3 = document.getElementById("closePopupBtn3");
+
+  // Agregar evento de clic a cada botón "Saiba Mais"
+  saibaMaisBtn3.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      popupModal4.style.display = "block"; // Mostrar pantalla emergente
+    });
+  });
+
+  // Agregar evento de clic al botón "Cerrar"
+  closePopupBtn3.addEventListener("click", function () {
+    popupModal4.style.display = "none"; // Ocultar pantalla emergente
+  });
+});
 
 ////////////////////////// El navegador
 

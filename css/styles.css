@@ -241,7 +241,25 @@ header {
         opacity: 0; /* Inicialmente, el botón está oculto */
         transition: opacity 0,6s ease; /* Agrega una transición suave para mostrar/ocultar el botón */
       }
-
+       
+      .saiba-mais-btn2 {
+        background-color: rgb(179, 244, 179); /* Color verde claro para el fondo del botón */
+        position: absolute; /* Posiciona el botón sobre la imagen */
+        bottom: 10px; /* Ajusta la posición vertical del botón */
+        left: 50%; /* Lo posiciona en el centro horizontalmente */
+        transform: translateX(-50%); /* Centra el botón horizontalmente */
+        opacity: 0; /* Inicialmente, el botón está oculto */
+        transition: opacity 0,6s ease; /* Agrega una transición suave para mostrar/ocultar el botón */
+      }
+      .saiba-mais-btn3 {
+        background-color: rgb(179, 244, 179); /* Color verde claro para el fondo del botón */
+        position: absolute; /* Posiciona el botón sobre la imagen */
+        bottom: 10px; /* Ajusta la posición vertical del botón */
+        left: 50%; /* Lo posiciona en el centro horizontalmente */
+        transform: translateX(-50%); /* Centra el botón horizontalmente */
+        opacity: 0; /* Inicialmente, el botón está oculto */
+        transition: opacity 0,6s ease; /* Agrega una transición suave para mostrar/ocultar el botón */
+      }
       .carrusel-item:hover .carrusel-image {
         transform: scale(1.1); /* Agrandar la imagen cuando el usuario pasa el ratón sobre ella */
       }
@@ -249,7 +267,12 @@ header {
       .carrusel-item:hover .saiba-mais-btn {
         opacity: 1; /* Muestra el botón cuando el usuario pasa el ratón sobre la imagen */
       }
-
+      .carrusel-item:hover .saiba-mais-btn2 {
+        opacity: 1; /* Muestra el botón cuando el usuario pasa el ratón sobre la imagen */
+      }
+      .carrusel-item:hover .saiba-mais-btn3 {
+        opacity: 1; /* Muestra el botón cuando el usuario pasa el ratón sobre la imagen */
+      }
       .popup-modal2 {
         display: none;
         position: fixed;
@@ -260,12 +283,31 @@ header {
         background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
         z-index: 999; /* Asegura que la pantalla emergente esté sobre otros elementos */
       }
-      
+      .popup-modal3 {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+        z-index: 999; /* Asegura que la pantalla emergente esté sobre otros elementos */
+      }
+      .popup-modal4 {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+        z-index: 999; /* Asegura que la pantalla emergente esté sobre otros elementos */
+      }
       .popup-content {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: 40%;
+        left: 40%;
+        transform: translate(-40%, -40%);
         background-color: #fff;
         padding: 20px;
         border-radius: 10px;
