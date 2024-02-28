@@ -240,6 +240,7 @@ header {
         transform: translateX(-50%); /* Centra el botón horizontalmente */
         opacity: 0; /* Inicialmente, el botón está oculto */
         transition: opacity 0,6s ease; /* Agrega una transición suave para mostrar/ocultar el botón */
+     
       }
        
       .saiba-mais-btn2 {
@@ -314,12 +315,20 @@ header {
       }
       
       .close-popup-btn {
-        margin-top: 10px;
+        /*margin-top: 10px;*/
+
+        background-color: #ffffff; /* Color de fondo del botón */
+        color: #333333; /* Color del texto del botón */
+        border: 3px solid #fb0000; /* Borde del botón */
+        padding: 5px 10px; /* Espaciado interno del botón (vertical horizontal) */
+        border-radius: 25px; /* Radio de borde para bordes redondeados */
+        cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+        transition: background-color 0.3s, color 0.3s; /* Transición suave para cambios de */
       }
       
       .close-popup-btn:hover {
         cursor: pointer;
-        background-color: #f00; /* Cambia el color de fondo cuando se pasa el ratón sobre el botón */
+        background-color: rgb(205, 201, 201); /* Cambia el color de fondo cuando se pasa el ratón sobre el botón */
       }
  
       /*********** boton de home  */
@@ -338,10 +347,24 @@ header {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
+
+
+
 .modal-content {
     background-color: #fff;
     margin: 15% auto;
     padding: 20px;
     width: 70%;
     text-align: center;
+}
+
+.modal-content button {
+  margin-bottom: 15px; /* Ajusta el valor según el espacio que desees entre los botones */
+}
+#popupModal .modal-content button#loginButton {
+  border: 2px solid green; /* Borde de color verde */
+}
+
+#popupModal .modal-content button#closeButton {
+  border: 2px solid red; /* Borde de color rojo */
 }

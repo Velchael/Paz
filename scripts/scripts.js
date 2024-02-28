@@ -19,7 +19,7 @@
     popupModal.style.display = "none";
   });
     });
-// Agrega esto al código JavaScript
+// Agrega esto al código JavaScript  logoutButton
 document.getElementById("logoutButton").addEventListener("click", function () {
   // Cambia el estado de userConfirmed a false
   //usertarefaElement.textContent = '';
@@ -41,11 +41,15 @@ var sideMenu = document.getElementById('side-menu');
 function openMenu() {
     sideMenu.classList.remove('hidden');
     sideMenu.classList.add('visible');
+    document.getElementById("side-menu").classList.remove("hidden");
+    document.getElementById("open-menu-button").textContent = ""; // Elimina el contenido del botón
 }
 
 function closeMenu() {
     sideMenu.classList.remove('visible');
     sideMenu.classList.add('hidden');
+    document.getElementById("side-menu").classList.add("hidden");
+    document.getElementById("open-menu-button").textContent = "☰"; // Restaura el contenido del botón
 }
 /**********Carrusel automatico */
 const carrusel = document.querySelector(".carrusel-items");
