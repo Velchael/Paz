@@ -139,6 +139,13 @@ header {
             padding: 1px;
             display: inline;
           }
+          .list2 {
+            font-size: 17px;
+            padding: 5px;
+            display: inline-block; /* Cambiar de inline a inline-block */
+            margin-top: 5px;
+           /* margin-bottom: 5px; /* Agregar margen inferior */
+          }
           .declare{
             font-size: 12px; /* Ajusta el tamaño de fuente según tus preferencias */
             font-weight: bold; /* Aplica un estilo de fuente en negrita si deseas */
@@ -334,7 +341,7 @@ header {
       /*********** boton de home  */
     .home-symbol {
       font-size: 15px; 
-      color: white;
+      color: rgb(255, 255, 255);
   }
   /******ventana popup *********/
   .modal {
