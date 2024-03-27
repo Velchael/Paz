@@ -217,3 +217,22 @@ Content-Security-Policy: As configurações da página bloquearam o carregamento
              </ul>
 
             </nav> 
+
+            /////////////////////// popupModal4 
+            <div id="popupModal5" class="popup-modal5">
+            <div class="popup-content">
+              <h2>Celebração da Ressureçaão de Jesus ✝  </h2>
+            
+              
+              <p>Mas Deus dá prova do seu amor para conosco, em que, quando éramos ainda pecadores, Cristo morreu por nós.
+                   Rom 5:8</p> 
+
+                   <h3 class="highlighted-title">
+                    Participe da nossa celebração da vida, morte e ressurreição do Senhor Jesus Cristo, é uma grande celebração
+                    <span class="icon">&#127881;&#127881;&#127881</span> <!-- Icono de fiesta -->
+                </h3>
+               <p>Venha com sua família, amigos e vizinhos todos juntos celebrando a ressurreição
+               </p>
+              <button id="closePopupBtn4" class="close-popup-btn">Cerrar</button>
+            </div>
+          </div>

@@ -81,22 +81,22 @@ carrusel.addEventListener("mouseout", () => {
 start();
 
 // Selecciona todos los elementos .carrusel-item
-const carruselItems = document.querySelectorAll('.carrusel-item');
+//const carruselItems = document.querySelectorAll('.carrusel-item');
 
 // Recorre cada elemento y agrega eventos de ratón
-carruselItems.forEach(item => {
-  const saibaMaisBtn = item.querySelector('.saiba-mais-btn');
+//carruselItems.forEach(item => {
+ // const saibaMaisBtn = item.querySelector('.saiba-mais-btn');
   
   // Muestra el botón al pasar el ratón sobre la imagen
-  item.addEventListener('mouseenter', () => {
-    saibaMaisBtn.style.display = 'block';
-  });
+ // item.addEventListener('mouseenter', () => {
+ //   saibaMaisBtn.style.display = 'block';
+ // });
   
   // Oculta el botón al salir el ratón de la imagen
-  item.addEventListener('mouseleave', () => {
-    saibaMaisBtn.style.display = 'none';
-  });
-});
+  //item.addEventListener('mouseleave', () => {
+  //  saibaMaisBtn.style.display = 'none';
+ // });
+//});
 // Muestra la pantalla emergente al hacer clic en el botón "Saiba Mais1"
 document.addEventListener("DOMContentLoaded", function () {
   // Obtener elementos
@@ -151,22 +151,22 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 // Muestra la pantalla emergente al hacer clic en el botón "Saiba Mais4"
-document.addEventListener("DOMContentLoaded", function () {
-  // Obtener elementos
-  const saibamaisbtn4 = document.querySelectorAll(".saiba-mais-btn4");
-  const popupModal5 = document.getElementById("popupModal5");
-  const closePopupBtn4 = document.getElementById("closePopupBtn4");
+//document.addEventListener("DOMContentLoaded", function () {
+  // Obtener elementos                              saiba-mais-btn4
+//  const saibaMaisbtn4 = document.querySelectorAll(".saiba-mais-btn4");
+//  const popupModal5 = document.getElementById("popupModal5");
+  //const closePopupBtn4 = document.getElementById("closePopupBtn4");
   // Agregar evento de clic a cada botón "Saiba Mais"
-  saibamaisbtn4.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      popupModal5.style.display = "block"; // Mostrar pantalla emergente
-    });
-  });
+ // saibaMaisbtn4.forEach(function (btn) {
+//    btn.addEventListener("click", function () {
+ //     popupModal5.style.display = "block"; // Mostrar pantalla emergente
+ //   });
+ // });
   // Agregar evento de clic al botón "Cerrar"
-  closePopupBtn4.addEventListener("click", function () {
-    popupModal5.style.display = "none"; // Ocultar pantalla emergente
-  });
-});
+//  closePopupBtn4.addEventListener("click", function () {
+ //   popupModal5.style.display = "none"; // Ocultar pantalla emergente
+ // });
+//});
 
 ////////////////////////// El navegador
 window.addEventListener('DOMContentLoaded', function() {

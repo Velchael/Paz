@@ -246,7 +246,7 @@ header {
         left: 50%; /* Lo posiciona en el centro horizontalmente */
         transform: translateX(-50%); /* Centra el botón horizontalmente */
         opacity: 0; /* Inicialmente, el botón está oculto */
-        transition: opacity 0,6s ease; /* Agrega una transición suave para mostrar/ocultar el botón */
+        /*transition: opacity 0,6s ease; /* Agrega una transición suave para mostrar/ocultar el botón */
      
       }
        
@@ -257,7 +257,7 @@ header {
         left: 50%; /* Lo posiciona en el centro horizontalmente */
         transform: translateX(-50%); /* Centra el botón horizontalmente */
         opacity: 0; /* Inicialmente, el botón está oculto */
-        transition: opacity 0,6s ease; /* Agrega una transición suave para mostrar/ocultar el botón */
+        /*transition: opacity 0,6s ease; /* Agrega una transición suave para mostrar/ocultar el botón */
       }
       .saiba-mais-btn3 {
         background-color: rgb(179, 244, 179); /* Color verde claro para el fondo del botón */
@@ -266,17 +266,31 @@ header {
         left: 50%; /* Lo posiciona en el centro horizontalmente */
         transform: translateX(-50%); /* Centra el botón horizontalmente */
         opacity: 0; /* Inicialmente, el botón está oculto */
-        transition: opacity 0,6s ease; /* Agrega una transición suave para mostrar/ocultar el botón */
+        /*transition: opacity 0,6s ease; /* Agrega una transición suave para mostrar/ocultar el botón */
       }
-      .saiba-mais4 {
+      .saiba-mais-btn4 {
         background-color: rgb(179, 244, 179); /* Color verde claro para el fondo del botón */
         position: absolute; /* Posiciona el botón sobre la imagen */
         bottom: 10px; /* Ajusta la posición vertical del botón */
         left: 50%; /* Lo posiciona en el centro horizontalmente */
         transform: translateX(-50%); /* Centra el botón horizontalmente */
         opacity: 0; /* Inicialmente, el botón está oculto */
-        transition: opacity 0,6s ease; /* Agrega una transición suave para mostrar/ocultar el botón */
+        /*transition: opacity 0,6s ease; /* Agrega una transición suave para mostrar/ocultar el botón */
       }
+      /* .popup-modal4                  */
+
+      .highlighted-title {
+        color: #ff7f00; /* Color destacado */
+        position: relative; /* Posición relativa para que el icono se ajuste correctamente */
+    }
+    
+    .icon {
+        font-size: 24px; /* Tamaño del icono */
+        margin-left: 5px; /* Espacio entre el texto y el icono */
+    }
+
+    /*  fim do popup    */
+    
       .carrusel-item:hover .carrusel-image {
         transform: scale(1.1); /* Agrandar la imagen cuando el usuario pasa el ratón sobre ella */
       }
